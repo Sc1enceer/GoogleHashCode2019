@@ -95,7 +95,7 @@ public class InterestAlg {
                   set.remove(set.get(i));
               }
               for (int j = 0; j < set.size(); j++){
-                  if(set.get(i).x.equals(set.get(j).y)){
+                  if(set.get(i).x.equals(set.get(j).y) && set.get(i).y.equals(set.get(j).x)){
                       set.remove(set.get(j));
                   }
               }

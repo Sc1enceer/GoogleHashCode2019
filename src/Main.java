@@ -20,6 +20,7 @@ public class Main {
                 System.out.println();
             }
             splitOrientation(photos);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
