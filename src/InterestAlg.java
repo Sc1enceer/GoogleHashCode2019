@@ -6,9 +6,13 @@ public class InterestAlg {
 
   ArrayList<Photo> HPhoto;
   ArrayList<Photo> VPhoto;
-  ArrayList<Slide> SlideList;
+  ArrayList<Slide> SlideList = new ArrayList<Slide>();
+  LinkedList<Slide> slideshow;
 
-  InterestAlg(){
+  InterestAlg(ArrayList<Photo> HPhoto, ArrayList<Photo> VPhoto){
+      this.HPhoto = HPhoto;
+      this.VPhoto = VPhoto;
+
 
   }
     public class Tuple<X, Y> {
@@ -85,12 +89,10 @@ public class InterestAlg {
   }
 
   public void alg(ArrayList<Tuple<Photo,Photo>> set){
-      if
+      //if
   }
 
-
-
-
-
-
+    public LinkedList<Slide> getSlideshow() {
+        return slideshow;
+    }
 }

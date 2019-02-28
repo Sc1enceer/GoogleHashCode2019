@@ -6,6 +6,7 @@ public class Slide {
     Set<String> tags = new HashSet<String>();
     Slide nextSlide;
 
+
     public Slide(Photo[] photos) {
         this.photos = photos;
         generateTags();
@@ -38,5 +39,17 @@ public class Slide {
 
     public void setTags(Set<String> tags) {
         this.tags = tags;
+    }
+
+    public Slide getNextSlide() {
+        return nextSlide;
+    }
+
+    public String getIndex(){
+        String result = "";
+        for (Photo p : photos){
+            result += p.getIndex() + " ";
+        }
+        return result;
     }
 }

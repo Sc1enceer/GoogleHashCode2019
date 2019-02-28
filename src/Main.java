@@ -1,12 +1,16 @@
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 
 public class Main {
     private static ArrayList<Photo> horizontalPhotos;
     private static ArrayList<Photo> verticalPhotos;
 
-    public static void main(String[] agrs){
+    public static void main(String[] agrs) throws IOException {
+        Main main = new Main();
         Parser parser = new Parser();
         Photo[] photos;
         try {
@@ -23,6 +27,9 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        InterestAlg alg = new InterestAlg(horizontalPhotos, verticalPhotos);
+        main.submission(alg.getSlideshow());
     }
 
     private static void splitOrientation(Photo[] photos){
@@ -35,6 +42,16 @@ public class Main {
             } else {
                 verticalPhotos.add(photos[i]);
             }
+        }
+    }
+
+    //LinkedList<Slide> slides = new LinkedList<Slide>();
+
+    public void submission(LinkedList<Slide> slides) throws IOException {
+        Writer fileWriter = new FileWriter("output.txt", true);
+        fileWriter.write(slides.size() + "\n");
+        for (Slide s : slides){
+            fileWriter.write(s.getIndex() + "\n");
         }
     }
 }
