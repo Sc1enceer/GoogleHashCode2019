@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fc7b4619-56c5-4bf0-862e-400cb1184169" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterestAlg.java" afterPath="$PROJECT_DIR$/src/InterestAlg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Slide.java" afterPath="$PROJECT_DIR$/src/Slide.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,7 +40,7 @@
       <file leaf-file-name="InterestAlg.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/InterestAlg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
+            <state relative-caret-position="503">
               <caret line="87" column="8" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
               <folding>
                 <element signature="e#1449#1457#0" expanded="true" />
@@ -339,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551384786617</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="upload">
+      <created>1551385071593</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551385071593</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -480,7 +485,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/InterestAlg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
+        <state relative-caret-position="503">
           <caret line="87" column="8" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
           <folding>
             <element signature="e#1449#1457#0" expanded="true" />
