@@ -7,7 +7,7 @@ public class InterestAlg {
   ArrayList<Photo> HPhoto;
   ArrayList<Photo> VPhoto;
   ArrayList<Slide> SlideList;
-
+  ArrayList<Tuple<Slide, Slide>> beautifulTransition = new ArrayList<>();
   InterestAlg(){
 
   }
@@ -84,8 +84,54 @@ public class InterestAlg {
               .collect(toList());
   }
 
-  public void alg(ArrayList<Tuple<Photo,Photo>> set){
-      if
+  public void alg(ArrayList<Tuple<Slide,Slide>> set){
+
+      do{
+          for(int i = 0; i < set.size(); i++){
+              if (set.get(i).x.equals(set.get(i).y)){
+                  set.remove(set.get(i));
+              }
+              if (comparePhotos(set.get(i).x.getPhotos(), set.get(i).y.getPhotos())){
+                  set.remove(set.get(i));
+              }
+              for (int j = 0; j < set.size(); j++){
+                  if(set.get(i).x.equals(set.get(j).y)){
+                      set.remove(set.get(j));
+                  }
+              }
+          }
+
+          Map<Integer, Tuple<Slide, Slide>> tempMap = new HashMap<>();
+          for (int i = 0; i < set.size(); i++){
+              Slide tempSlide = set.get(i).x;
+              Integer tempValue = interestFactor(tempSlide, set.get(i).y);
+              tempMap.put(tempValue, set.get(i));
+          }
+
+          Set<Integer> keyValues = tempMap.keySet();
+          int maxKey =  Collections.max(keyValues);
+          beautifulTransition.add(tempMap.get(maxKey));
+
+          for (int i = 0; i< beautifulTransition.size(); i++){
+              for (int j = 0; j< set.size(); j++){
+                  if (beautifulTransition.get(i).x.equals(set.get(j).x)){
+                      set.remove(set.get(j));
+                  }
+              }
+          }
+      } while (!set.isEmpty());
+  }
+
+  private boolean comparePhotos(Photo[] p1, Photo[] p2){
+      for (Photo p11: p1 ) {
+          for (Photo p22 : p2  ) {
+              if (p11.equals(p22)){
+                  return true;
+              }
+          }
+
+      }
+      return false;
   }
 
 
