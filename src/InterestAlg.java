@@ -6,7 +6,7 @@ public class InterestAlg {
 
   ArrayList<Photo> HPhoto;
   ArrayList<Photo> VPhoto;
-  ArrayList<Photo> PhotoList;
+  ArrayList<Slide> SlideList;
 
   InterestAlg(){
 
@@ -36,6 +36,8 @@ public class InterestAlg {
           ps[1] = t.y;
           Slide s = new Slide(ps);
           s.setTags(tagA);
+          SlideList.add(s);
+
       }
 
       for (Photo h : HPhoto){
@@ -43,6 +45,7 @@ public class InterestAlg {
           ps[0] = h;
           Slide s = new Slide(ps);
           s.setTags(h.getTags());
+          SlideList.add(s);
 
       }
 
@@ -51,17 +54,18 @@ public class InterestAlg {
           ps[0] = v;
           Slide s = new Slide(ps);
           s.setTags(v.getTags());
+          SlideList.add(s);
       }
   }
 
-  public Integer interestFactor(Tuple<Photo, Photo> slides){
-      ArrayList<String> s1 = new ArrayList<String>(slides.x.getTags());
-      s1.removeAll(slides.y.getTags());
+  public Integer interestFactor(Slide slide, Slide slide2){
+      ArrayList<String> s1 = new ArrayList<String>(slide.getTags());
+      s1.removeAll(slide2.getTags());
 
-      ArrayList<String> common = new ArrayList<String>(slides.x.getTags());
+      ArrayList<String> common = new ArrayList<String>(slide.getTags());
       common.removeAll(s1);
 
-      ArrayList<String> s2 = new ArrayList<String>(slides.y.getTags());
+      ArrayList<String> s2 = new ArrayList<String>(slide2.getTags());
       s2.removeAll(common);
 
       ArrayList<Integer> integer = new ArrayList<Integer>();
@@ -73,22 +77,15 @@ public class InterestAlg {
 
   }
 
-  List<Tuple<Photo, Photo>> ComparisonSet;
+  List<Tuple<Slide, Slide>> ComparisonSet;
   public void createComparisonSet(){
-      ComparisonSet = PhotoList.stream()
-              .flatMap(x -> (PhotoList.stream().map(y -> new Tuple((Photo)x, (Photo)y))))
+      ComparisonSet = SlideList.stream()
+              .flatMap(x -> (SlideList.stream().map(y -> new Tuple((Slide)x, (Slide)y))))
               .collect(toList());
   }
 
   public void alg(ArrayList<Tuple<Photo,Photo>> set){
-      for(int i = 0; i< set.size(); i++){
-          if(set.get(i).x == set.get(i).y){
-              set.remove(set.get(i));
-          }
-
-          //if()
-
-      }
+      if
   }
 
 
