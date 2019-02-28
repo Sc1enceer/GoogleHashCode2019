@@ -86,6 +86,8 @@ public class InterestAlg {
               set.remove(set.get(i));
           }
 
+          //if()
+
       }
   }
 
