@@ -82,7 +82,10 @@ public class InterestAlg {
 
   public void alg(ArrayList<Tuple<Photo,Photo>> set){
       for(int i = 0; i< set.size(); i++){
-          if(set.get(i).x == set.get(i).y)
+          if(set.get(i).x == set.get(i).y){
+              set.remove(set.get(i));
+          }
+
       }
   }
 
