@@ -34,6 +34,7 @@ public class Parser {
                 tempTags.add(strs[i]);
             }
             Photo tempPhoto = new Photo(strs[0].charAt(0), tempTags );
+            tempPhoto.setIndex(photoIdx);
             photos[photoIdx] = tempPhoto;
             photoIdx++;
         }

@@ -8,9 +8,12 @@ public class InterestAlg {
   ArrayList<Photo> VPhoto;
   ArrayList<Slide> SlideList;
   ArrayList<Tuple<Slide, Slide>> beautifulTransition = new ArrayList<>();
-  InterestAlg(){
-
+  InterestAlg(ArrayList<Photo> HPhoto, ArrayList<Photo> VPhoto){
+      this.HPhoto = HPhoto;
+      this.VPhoto = VPhoto;
   }
+
+
     public class Tuple<X, Y> {
         public final X x;
         public final Y y;
@@ -134,9 +137,41 @@ public class InterestAlg {
       return false;
   }
 
+    LinkedList<Slide> answer = new LinkedList<>();
+
+  public LinkedList<Slide> generateLinkedList(Slide tempSlide,ArrayList<Tuple<Slide, Slide>> allSlides ){
+      if (allSlides.isEmpty()){
+          return answer;
+      }
+      for (Tuple<Slide, Slide> tuple: allSlides) {
+          if
+
+      }
+  }
 
 
+  public LinkedList<Slide> generateFstSlide(ArrayList<Tuple<Slide, Slide>> timeout){
+      for (int i = 0; i< timeout.size(); i++){
+          Slide tempSlide = timeout.get(i).x;
+          for (int j = 0; j< timeout.size(); j++){
+              if (!helper(tempSlide, timeout)){
+                  generateLinkedList(tempSlide, timeout), ;
+              }
+          }
+      }
 
+  }
 
+  private boolean helper(Slide slide1, ArrayList<Tuple<Slide, Slide>> timeout2){
+      for (int i = 0; i< timeout2.size() ; i++){
+          if (slide1.equals(timeout2.get(i).y)){
+              return true;
+          } else {
+              return false;
+          }
+
+      }
+
+  }
 
 }

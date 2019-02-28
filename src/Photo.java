@@ -4,6 +4,7 @@ import java.util.Set;
 public class Photo {
     char orientation; // H/V
     Set<String> tags = new HashSet<String>();
+    int index;
 
     public Photo(char orientation, Set<String> tags) {
         this.orientation = orientation;
@@ -25,5 +26,13 @@ public class Photo {
 
     public void setTags(Set<String> tags) {
         this.tags = tags;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public int getIndex() {
+        return index;
     }
 }
