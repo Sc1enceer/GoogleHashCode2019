@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static java.util.stream.Collectors.toList;
 
@@ -23,7 +20,7 @@ public class InterestAlg {
         }
     }
 
-    ArrayList<Tuple<Photo, Photo>> vPairs;
+    List<Tuple<Photo, Photo>> vPairs;
 
   public void createVPairs(){
       vPairs = VPhoto.stream()
@@ -38,9 +35,22 @@ public class InterestAlg {
           ps[0] = t.x;
           ps[1] = t.y;
           Slide s = new Slide(ps);
-          p.setTags(tagA);
-          p.setOrientation('W');
-          PhotoList.add(p);
+          s.setTags(tagA);
+      }
+
+      for (Photo h : HPhoto){
+          Photo[] ps = new Photo[1];
+          ps[0] = h;
+          Slide s = new Slide(ps);
+          s.setTags(h.getTags());
+
+      }
+
+      for (Photo v : VPhoto){
+          Photo[] ps = new Photo[1];
+          ps[0] = v;
+          Slide s = new Slide(ps);
+          s.setTags(v.getTags());
       }
   }
 
@@ -63,7 +73,7 @@ public class InterestAlg {
 
   }
 
-  ArrayList<Tuple<Photo, Photo>> ComparisonSet;
+  List<Tuple<Photo, Photo>> ComparisonSet;
   public void createComparisonSet(){
       ComparisonSet = PhotoList.stream()
               .flatMap(x -> (PhotoList.stream().map(y -> new Tuple((Photo)x, (Photo)y))))
